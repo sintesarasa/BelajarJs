@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menentukan Bilangan Genap / Ganjil</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+        }
+        #hasil {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Menentukan Bilangan Genap / Ganjil</h1>
+    <label for="bilangan">Masukkan Angka</label>
+    <input type="number" name="bilangan" id="bilangan">
+    <button onclick="bilanganGenapGanjil()">Deteksi Genap / Ganjil</button>
+
+    <div  id="hasil"></div>
+
+    <script>
+        function bilanganGenapGanjil(){
+            let bilangan = parseInt(document.getElementById("bilangan").value);
+            let genapGanjil = "";
+
+            if(bilangan % 2 === 0){
+                genapGanjil = +bilangan+ " adalah termasuk bilangan Genap";
+            }
+            else{
+                genapGanjil = +bilangan+ " adalah termasuk bilangan Ganjil"
+            }
+
+            document.getElementById("hasil").innerText=genapGanjil;
+        }
+    </script>
+</body>
+</html>
