@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penilaian Nilai</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+        }
+
+        #hasil {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Penilaian Nilai</h1>
+    <label for="nilai">Masukkan Nilai Anda</label>
+    <input type="number" name="nilai" id="nilai" placeholder="Masukkan nilai anda">
+    <button onclick="hitungGrade()">Hitung Grade</button>
+
+    <div id="hasil"></div>
+
+
+    <script>
+        function hitungGrade(){
+            let nilai = parseFloat(document.getElementById("nilai").value);
+            let hasil = "";
+
+            if(nilai >= 80){
+                hasil = "Anda Mendapatkan A"
+            }else if (nilai >=70){
+                hasil = "Anda Mendapatkan B"
+            }else {
+                hasil = "Anda perlu belajar lebih keras"
+            }
+
+            //menampilkan hasil kedalam element dengan ID
+            document.getElementById("hasil").innerText = hasil;
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menentukan Status Dewasa</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20px;
+        }
+
+        #kategori {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Menentukan Status Dewasa</h1>
+    <label for="usia">Masukkan Usia Anda</label>
+    <input type="number" name="usia" id="usia">
+    <button onclick="statusDewasa()">Tentukan Kategori Anda</button>
+
+    <div id="kategori"></div>
+
+    <script>
+        function statusDewasa(){
+
+            let usia = parseInt(document.getElementById("usia").value);
+            let status = "";
+
+        if(usia >=18 ){
+            status = "Anda Sudah Dewasa"
+        }else{
+            status = "Anda Masih Anak-anak"
+        }
+
+        document.getElementById("kategori").innerText= status;
+        }
+       
+    </script>
+</body>
+</html>
