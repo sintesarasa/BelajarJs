@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menentukan Hari dan Angka</title>
+</head>
+<body>
+    <h1>Menentukan Hari dan Angka</h1>
+    <label for="hari">Masukkan angka untuk hari (1-7)</label>
+    <input type="number" name="hari" id="hari" min="1" max="7" />
+    <button onclick="hariAngka()">klik disini</button>
+
+    <div id="hasil"></div>
+
+    <script>
+        function hariAngka() {
+            const input = document.getElementById("hari").value; // Ambil nilai dari input
+            const hasilDiv = document.getElementById("hasil"); // Ambil elemen hasil
+            let hari; // Variabel untuk menyimpan nama hari
+
+            // Cek nilai input dan tentukan hari
+            switch (parseInt(input)) {
+                case 1:
+                    hari = "Senin";
+                    break;
+                case 2:
+                    hari = "Selasa";
+                    break;
+                case 3:
+                    hari = "Rabu";
+                    break;
+                case 4:
+                    hari = "Kamis";
+                    break;
+                case 5:
+                    hari = "Jumat";
+                    break;
+                case 6:
+                    hari = "Sabtu";
+                    break;
+                case 7:
+                    hari = "Minggu";
+                    break;
+                default:
+                    hari = "Masukkan angka antara 1 dan 7"; // Pesan kesalahan
+            }
+
+            // Tampilkan hasil
+            hasilDiv.innerHTML = `Hari yang Anda pilih adalah: ${hari}`;
+        }
+    </script>
+</body>
+</html>
