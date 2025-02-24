@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Menentukan Grade Berdasarkan Nilai</title>
+		<style>
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+				margin: 20px;
+			}
+			#hasil {
+				font-weight: bold;
+				margin: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Menentukan Grade Berdasarkan Nilai</h1>
+		<label for="nilai">Masukkan Nilai Anda</label>
+		<input type="number" name="nilai" id="nilai" min="0" max="100" />
+		<button onclick="gradingNilai()">Klik Disini</button>
+
+		<div id="hasil"></div>
+
+		<script>
+			function gradingNilai() {
+				let nilai = document.getElementById("nilai").value;
+				let hasil = "";
+
+				if (nilai >= 90) {
+					hasil = "Anda mendapatkan nilai A";
+				} else if (nilai >= 80 && nilai < 90) {
+					hasil = "Anda mendapatkan nilai B";
+				} else if (nilai >= 70 && nilai < 80) {
+					hasil = "Anda mendapatkan nilai C";
+				} else {
+					hasil = "Anda perlu belajar lagi";
+				}
+				document.getElementById("hasil").innerText = hasil;
+			}
+
+		</script>
+	</body>
+</html>
